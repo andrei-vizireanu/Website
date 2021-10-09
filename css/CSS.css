@@ -1,0 +1,300 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Russo+One&display=swap'); */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*/////////////*/
+
+/*
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+*/
+
+header{
+    margin-left: auto;
+    margin-right: auto;
+	position: fixed;
+    top: 0;
+    width: 100%;
+	/* align-items: center; */
+	background-color: #24252A;
+	border-bottom-style:solid;
+	border-radius: 0px 0px 50px 50px;
+	border-color:#0088A9;
+	border-width: 15px;
+}
+
+/* montserrat-500 - latin */
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	src:url('../fonts/montserrat-v15-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/montserrat-v15-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('../fonts/montserrat-v15-latin-500.woff') format('woff'), /* Modern Browsers */
+		url('../fonts/montserrat-v15-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/montserrat-v15-latin-500.svg#Montserrat') format('svg'), /* Legacy iOS */
+		url('../fonts/montserrat-v15-latin-500.eot') /* IE9 Compat Modes */;
+	unicode-range: U+000-5FF; /* Latin glyphs */
+  }
+
+#content-load{
+	display: none;
+}
+
+#about-me{
+	display: none;
+}
+
+.special-text{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* .header{
+	display: flex;
+	justify-content: flex-start;
+	padding: 30px 10%;
+	align-items: center;
+	background-color: #24252A;
+	border-bottom-style:solid;
+	border-radius: 0px 0px 50px 50px;
+	border-color:#0088A9;
+	border-width: 15px;
+} */
+
+.logo{
+	cursor: pointer;
+	margin: 30px 130px 30px 80px;
+	height: 50px;
+	width: 50px;
+	float: left
+}
+
+.nav-links{
+	list-style: none;
+	margin: 40px 80px 30px 30px;
+	float: center;
+}
+
+.nav-links li{
+    display: inline-block;
+	padding: 0px 20px;
+}
+
+.nav-links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover{
+	color: #0088A9;
+	border-style:solid;
+	border-radius: 50px;
+}
+
+.on-page{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+	color: #0088A9;
+	cursor: pointer;
+	border-color: #0088A9; /*for the button*/
+}
+
+.title{
+	margin-top: 200px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font: italic;
+	font-size: 35px;
+	color: #24252A;
+	text-decoration: none;
+}
+
+.myPicture{
+	border-radius: 50%;
+	height: 150px;
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+
+.myName{
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 15px;
+	color: #24252A;
+	text-decoration: none;
+}
+
+.lorem{
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 30px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+button{
+	padding: 9px 25px;
+	border-style:solid;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+	background-color: #24252A;
+}
+
+button:hover{
+	color: #0088A9;
+}
+
+/*We start to apply the rules for the mobile version*/
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+
+	#mobile-menu{
+		display:block;
+		position: fixed;
+		float: right;
+		background: red;
+		height:100vh;
+		width: 10%;
+		flex-direction: column;
+		clip-path: circle(200px at 90% -10%);
+	}
+	
+	.nav-links{
+		display: none;
+	}
+	
+	.special-text{
+		display: none;
+	}
+
+    .logo{
+		margin: 20px 0px 30px 30px;
+		float: left;
+        width: 50px;
+		height: 50px;		
+	}
+
+	.title{
+		margin-top: 150px;
+		font-size: 25px;
+	}
+	
+	.menu-btn{
+		margin: 25px 30px 30px 0px;
+		float: right;
+		padding-right: 0px;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		transition: all .5s ease-in-out;
+	}
+
+	.menu-btn_burger{
+		width:40px;
+		height: 5px;
+		background: #0088A9;
+		border-radius: 5px;
+		box-shadow: 0px 2px 5px rgb(26, 64, 71);
+		transition: all .5s ease-in-out;
+	}
+
+	.menu-btn_burger::before,
+	.menu-btn_burger::after{
+		content: '';
+		position: absolute;
+		width: 40px;
+		height: 5px;
+		background: #0088A9;
+		border-radius: 5px;
+		box-shadow: 0px 2px 5px rgb(26, 64, 71);
+		transition: all .5s ease-in-out;
+	}
+	.menu-btn_burger::before{
+		transform: translateY(-16px);
+	}
+	.menu-btn_burger::after{
+		transform: translateY(16px);
+	}
+
+	/* ANIMATION */
+	.menu-btn.open .menu-btn_burger{
+		transform: translateX(-50px);
+		background: transparent;
+		box-shadow: none;
+	}
+
+	.menu-btn.open .menu-btn_burger::before{
+		transform: rotate(45deg) translate(35px, -35px);
+	}
+
+	.menu-btn.open .menu-btn_burger::after{
+		transform: rotate(-45deg) translate(35px, 35px);
+	}
+
+
+}
