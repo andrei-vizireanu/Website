@@ -88,7 +88,8 @@ header{
 	unicode-range: U+000-5FF; /* Latin glyphs */
   }
 
-#content-load{
+#desktop, 
+#mobile-menu{
 	display: none;
 }
 
@@ -209,7 +210,7 @@ button:hover{
 /* Use a media query to add a breakpoint at 800px: */
 @media screen and (max-width: 800px) {
 
-	#mobile-menu{
+	/* #mobile-menu{
 		display:block;
 		position: fixed;
 		float: right;
@@ -217,9 +218,9 @@ button:hover{
 		height:100vh;
 		width: 10%;
 		flex-direction: column;
-		clip-path: circle(200px at 90% -10%);
-	}
-	
+		clip-path: circle(100px at 10% -10%);
+	} */
+
 	.nav-links{
 		display: none;
 	}
@@ -241,9 +242,9 @@ button:hover{
 	}
 	
 	.menu-btn{
-		margin: 25px 30px 30px 0px;
+		margin: 40px 30px 30px 0px;
 		float: right;
-		padding-right: 0px;
+		/* padding-right: 0px; */
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -253,6 +254,19 @@ button:hover{
 		cursor: pointer;
 		transition: all .5s ease-in-out;
 	}
+
+	/* .menu-btn:after{
+		content: "";
+  		position: absolute;
+  		top: -1px;
+  		right: -1px;
+  		transform:translate(50%,-50%);
+  		width: 40px;
+  		height: 40px;
+  		border-radius: 50%;
+  		background: #4da6ff;
+  		mix-blend-mode:darken;
+	} */
 
 	.menu-btn_burger{
 		width:40px;

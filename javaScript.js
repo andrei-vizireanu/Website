@@ -11,34 +11,54 @@ function aboutMe() {
   document.getElementById("about-me-button").className = "on-page";
   document.getElementById("home-button").className = "special-text";
 }
-// var fonts = "url(fonts/montserrat-v15-latin-500.woff2), \
-// url('fonts/montserrat-v15-latin-500.eot?#iefix'), \
-// url('../fonts/montserrat-v15-latin-500.woff'), \
-// url('../fonts/montserrat-v15-latin-500.ttf'), \
-// url('../fonts/montserrat-v15-latin-500.svg#Montserrat'), \
-// url('../fonts/montserrat-v15-latin-500.eot')"
 
+// initiate the fonts variable
 var font = new FontFace("Montserrat", "url(fonts/montserrat-v15-latin-500.woff2)", {
   style: 'normal', unicodeRange: 'U+000-5FF', weight: '500'
 });
 
-// don't wait for the render tree, initiate an immediate fetch!
-//if (window.matchMedia('(min-width: 800px)').matches) {
-  // do stuff
-  font.load().then(function() {
-    // apply the font (which may re-render text and cause a page reflow)
-    // after the font has finished downloading
-    //document.fonts.add(font);
-    //document.body.style.fontFamily = "Awesome Font, serif";
-  
-    // OR... by default the content is hidden,
-    // and it's rendered after the font is available
-    var content = document.getElementById("content-load");
+// display the desktop header
+if (window.matchMedia('(min-width: 800px)').matches) {
+  var content = document.getElementById("mobile-menu");
+  content.style.display = "none";
+
+  // load the fonts and after that display the header
+  font.load().then(function() {  
+    var content = document.getElementById("desktop");
     content.style.display = "block";
-  
-    // OR... apply your own render strategy here...
   });
-//}
+
+}
+
+// display the mobile header
+if (window.matchMedia('(max-width: 800px)').matches) {
+  var content = document.getElementById("desktop");
+  content.style.display = "none";
+  // load the fonts and after that display the header
+  font.load().then(function() {  
+    var content = document.getElementById("mobile-menu");
+    content.style.display = "block";
+  });
+}
+
+
+// load the fonts and after that display the header
+// font.load().then(function() {
+
+//   var content = document.getElementById("content-load");
+//   content.style.display = "block";
+
+// });
+
+// display the desktop header
+// if (window.matchMedia('(min-width: 800px)').matches) {
+//   var content = document.getElementById("mobile-menu");
+//   content.style.display = "none";
+//   var content = document.getElementById("desktop");
+//   content.style.display = "block";
+// }
+
+
 
 const menuBtn = document.querySelector('.menu-btn');
 let menuOpen = false;
