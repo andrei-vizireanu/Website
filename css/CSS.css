@@ -66,9 +66,9 @@ table {
 
 :root{
 	--gradient:
-	linear-gradient(300deg, #ba4aff, rgb(186, 74, 255, 0) 70%),
-	linear-gradient(227deg, #008aff, rgb(0, 138, 255, 0) 70%),
-	linear-gradient(104deg, #00ffc6, rgb(0, 255, 198, 0) 74%);
+	linear-gradient(300deg, #ba4aff, rgb(186, 74, 255, 0) 100%),
+	linear-gradient(227deg, #008aff, rgb(0, 138, 255, 0) 100%),
+	linear-gradient(104deg, #00ffc6, rgb(0, 255, 198, 0) 100%);
 
 }
 
@@ -212,22 +212,50 @@ table {
 		display:none;
 	} */
 
+	header nav{
+		clip-path: circle(
+			calc(50px)
+			at
+			calc(100%-50px)
+			calc(0%+50px)
+		);
+	}
+
 	#desktop nav{
 		position:fixed;
 		top: 0;
 		bottom: 0;
 		right: 0;
-		width: 17rem;
+		width: 250px;
 
-		padding-top: 50px;
+		padding-top: 30px;
 		background: var(--gradient);
-		/* border-top-left-radius: 80%; */
+
+		clip-path: circle(
+			calc(50px)
+			at
+			calc(100%-50px)
+			calc(0%+50px)
+		);
 	}
 
 	#nav-desktop{
 		display: grid;
 		grid-auto-flow: row;
 		grid-auto-columns: max-content; /* Each column will sized to fit the content */
+		grid-template-columns: 1fr;
+		grid-template-rows: none;
+		grid-auto-rows: max-content;
+
+		padding: 0;
+		margin: 0;
+
+		clip-path: circle(
+			calc(50px)
+			at
+			calc(100%-50px)
+			calc(0%+50px)
+		);
 	}
 
 	#logo{
