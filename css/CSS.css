@@ -63,12 +63,37 @@ table {
 
 
 /* Start the rules */
+header{
+	position: fixed;
+	width: 100%;
+    top: 0;
+	background-color: #24252A;
+	border-bottom-style:solid;
+	border-radius: 0px 0px 50px 50px;
+	border-color:#0088A9;
+	border-width: 15px;
 
-:root{
-	--gradient:
-	linear-gradient(300deg, #ba4aff, rgb(186, 74, 255, 0) 100%),
-	linear-gradient(227deg, #008aff, rgb(0, 138, 255, 0) 100%),
-	linear-gradient(104deg, #00ffc6, rgb(0, 255, 198, 0) 100%);
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: max-content; /* Each column will sized to fit the content */
+	z-index: 1;
+}
+
+header ul {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: max-content;
+	grid-template-rows: 1fr;
+	gap: 0.5rem;
+
+	margin: 40px 80px 30px 30px;
+  
+	list-style-type: none;
+}
+
+body {
+	display: flex;
+	justify-content: center;
 
 }
 
@@ -80,30 +105,11 @@ table {
 	display:block;
 }
 
-#header{
-	width: 100%;
-	position: fixed;
-    top: 0;
-	background-color: #24252A;
-	border-bottom-style:solid;
-	border-radius: 0px 0px 50px 50px;
-	border-color:#0088A9;
-	border-width: 15px;
-	display: grid;
-	grid-auto-flow: column;
-	grid-auto-columns: max-content; /* Each column will sized to fit the content */
-}
-
 #logo{
 	cursor: pointer;
 	margin: 30px 130px 30px 80px;
 	height: 50px;
 	width: 50px;
-}
-
-#nav-desktop{
-	list-style: none;
-	margin: 40px 80px 30px 30px;
 }
 
 #nav-desktop li{
@@ -122,25 +128,19 @@ table {
 }
 
 #contact-desktop{
-	padding: 9px 25px;
-	border-style:solid;
+	border: 3px solid blue;
 	border-radius: 50px;
-	cursor: pointer;
-	transition: all 0.3s ease 0s;
-	background-color: #24252A;
+	padding: 9px 25px;
+	border-color: #0088A9;
 }
 
-#contact-desktop:hover{
-	color: #0088A9;
-}
-
-#nav-toggle{
-	display: none;
-}
-
-#nav-toggle-label{
+#nav-toggle-label {
 	display: none;
 	cursor: pointer;
+}
+  
+#nav-toggle {
+	display: none;
 }
 
 .on-page{
@@ -158,8 +158,6 @@ table {
 	text-decoration: none;
 	cursor: pointer;
 }
-
-
 
 .title{
 	margin-top: 200px;
@@ -191,14 +189,6 @@ table {
 	text-decoration: none;
 }
 
-.lorem{
-	font-size: 20px;
-	font-family: 'Montserrat', sans-serif;
-	margin-top: 30px;
-	margin-left: 30px;
-	margin-right: 30px;
-}
-
 /*We start to apply the rules for the mobile version*/
 /* Use a media query to add a breakpoint at 800px: */
 @media screen and (max-width: 768px) {
@@ -212,51 +202,76 @@ table {
 		display:none;
 	} */
 
-	header nav{
-		clip-path: circle(
-			calc(50px)
-			at
-			calc(100%-50px)
-			calc(0%+50px)
-		);
+	#nav-desktop{
+		display:none;
 	}
 
-	#desktop nav{
-		position:fixed;
+	header {
+		/* display: block; */
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header nav {
+		position: fixed;
 		top: 0;
 		bottom: 0;
-		right: 0;
-		width: 250px;
-
-		padding-top: 30px;
-		background: var(--gradient);
-
-		clip-path: circle(
-			calc(50px)
-			at
-			calc(100%-50px)
-			calc(0%+50px)
-		);
+		width: 300px;
+		right: 0rem;
+	
+		background: blue;
+		box-shadow: -2px 2px 8px 0px rgb(0 0 0 / 80%);
 	}
 
-	#nav-desktop{
-		display: grid;
+	header ul {
 		grid-auto-flow: row;
-		grid-auto-columns: max-content; /* Each column will sized to fit the content */
 		grid-template-columns: 1fr;
 		grid-template-rows: none;
 		grid-auto-rows: max-content;
-
+		gap: 0.5rem;
+	
 		padding: 0;
-		margin: 0;
-
-		clip-path: circle(
-			calc(50px)
-			at
-			calc(100%-50px)
-			calc(0%+50px)
-		);
 	}
+
+	header a {
+		place-content: flex-start;
+	}
+	
+	/* #nav-toggle-label {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex-basis: auto;
+	
+		z-index: 2;
+	} */
+	
+	/* #nav-toggle-label .bar {
+		display: inline-block;
+	
+		height: var(--bar-height);
+		width: 100%;
+	
+		background-color: var(--bg-color);
+	
+		transition: transform 250ms ease-out;
+	}
+	
+	#nav-toggle:checked + #nav-toggle-label > .bar:nth-child(1) {
+		transform: 
+		  translate(0, calc(var(--size) / 2 - var(--bar-height) / 2)) 
+		  rotate(225deg);
+	}
+	
+	#nav-toggle:checked + #nav-toggle-label > .bar:nth-child(2) {
+		transform: scaleX(0);
+	}
+	
+	#nav-toggle:checked + #nav-toggle-label > .bar:nth-child(3) {
+		transform: 
+		  translate(0, calc(-1 * var(--size) / 2 + var(--bar-height) / 2)) 
+		  rotate(135deg);
+	} */
 
 	#logo{
 		margin: 20px 0px 30px 30px;
@@ -271,7 +286,7 @@ table {
 	}
 	
 	.menu-btn{
-		margin: 40px 30px 30px 0px;
+		margin: 10px 30px 30px 0px;
 		float: right;
 		/* padding-right: 0px; */
 		position: relative;
@@ -297,6 +312,7 @@ table {
 	} */
 
 	.menu-btn_burger{
+		margin-top: 0px;
 		width:40px;
 		height: 5px;
 		background: #0088A9;
