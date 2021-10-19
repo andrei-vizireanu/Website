@@ -12,40 +12,32 @@
 	<!-- Load the stylesheet here because it will load the font faster than in the <head>. I know that it's not quite a good coding technique :( -->
 	<link rel="stylesheet" href="css/CSS.css">
 
-	<header id="header">
+	<header>
 
 		<a href="index.html">
 			<img id="logo" src="images/man.png" alt="Home">
 		</a>
 
-		<div id="desktop">
-			<nav>
-				<ul id="nav-desktop">
-					<li><a class="on-page" href="index.html">Home</a></li>
-					<li><a class="special-text" href="aboutMe.html">About Me</a></li>
-					<li><a class="special-text" href="myProjects.html">My Projects</a></li>
-					<li>
-						<a href="contact.html">
-						<button id="contact-desktop" class="special-text">Contact</button>
-						</a>
-					</li>
-				</ul>
-			</nav>
+  		<div class="menu-btn">
+    		<div class="menu-btn_burger"></div>
 		</div>
+
+		
+		<nav id="nav-desktop">
+			<ul id="nav-ul-desktop">
+				<li><a class="on-page" href="index.html">Home</a></li>
+				<li><a class="special-text" href="aboutMe.html">About Me</a></li>
+				<li><a class="special-text" href="myProjects.html">My Projects</a></li>
+				<li><a class="special-text" id="contact-desktop" href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		
 
 		<!-- <div id="mobile-menu" class="menu-btn" onclick="mobileNavIcon()">
 			<div class="menu-btn_burger"></div>
 		</div> -->
 
-		<input type="checkbox" class="toggle" id="nav-toggle">
-		<label for="nav-toggle" id="nav-toggle-label">
-			<div class="bar"></div>
-			<div class="bar"></div>
-			<div class="bar"></div>
-		</label>
-		
-
-		<div id="mobile-menu">
+		<!-- <div id="mobile-menu">
 			<nav>
 				<ul>
 					<li><a href="#">Home</a></li>
@@ -54,7 +46,7 @@
 					<li><a href="#">Contact</a></li>
 				</ul>
 			</nav>
-		</div>
+		</div> -->
 	
 	</header>
 

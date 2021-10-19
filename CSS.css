@@ -1,0 +1,357 @@
+
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	src:url('../fonts/montserrat-v15-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/montserrat-v15-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('../fonts/montserrat-v15-latin-500.woff') format('woff'), /* Modern Browsers */
+		url('../fonts/montserrat-v15-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/montserrat-v15-latin-500.svg#Montserrat') format('svg'), /* Legacy iOS */
+		url('../fonts/montserrat-v15-latin-500.eot') /* IE9 Compat Modes */;
+	unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Start the rules */
+header{
+	position: fixed;
+	width: 100%;
+    top: 0;
+	background-color: #24252A;
+	border-bottom-style:solid;
+	border-radius: 0px 0px 50px 50px;
+	border-color:#0088A9;
+	border-width: 15px;
+
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: max-content; /* Each column will sized to fit the content */
+	z-index: 1;
+}
+
+header ul {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: max-content;
+	grid-template-rows: 1fr;
+	gap: 0.5rem;
+
+	margin: 40px 80px 30px 30px;
+  
+	list-style-type: none;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+
+}
+
+#mobile-menu{
+	display:none;
+}
+
+#desktop{
+	display:block;
+}
+
+#logo{
+	cursor: pointer;
+	margin: 30px 130px 30px 80px;
+	height: 50px;
+	width: 50px;
+}
+
+#nav-desktop li{
+    display: inline-block;
+	padding: 0px 20px;
+}
+
+#nav-desktop li a{
+    transition: all 0.3s ease 0s;
+}
+
+#nav-desktop li a:hover{
+	color: #0088A9;
+	border-style:solid;
+	border-radius: 50px;
+}
+
+#contact-desktop{
+	border: 3px solid blue;
+	border-radius: 50px;
+	padding: 9px 25px;
+	border-color: #0088A9;
+}
+
+#nav-toggle-label {
+	display: none;
+	cursor: pointer;
+}
+  
+#nav-toggle {
+	display: none;
+}
+
+.on-page{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+	color: #0088A9;
+	cursor: pointer;
+}
+
+.special-text{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.title{
+	margin-top: 200px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font: italic;
+	font-size: 35px;
+	color: #24252A;
+	text-decoration: none;
+}
+
+.myPicture{
+	border-radius: 50%;
+	height: 150px;
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+
+.myName{
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 15px;
+	color: #24252A;
+	text-decoration: none;
+}
+
+/*We start to apply the rules for the mobile version*/
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 768px) {
+
+	/* #mobile-menu{
+		display:block;
+		right:0;
+	}
+
+	#desktop{
+		display:none;
+	} */
+
+	#nav-desktop{
+		display:none;
+	}
+
+	header {
+		/* display: block; */
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header nav {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		width: 300px;
+		right: 0rem;
+	
+		background: blue;
+		box-shadow: -2px 2px 8px 0px rgb(0 0 0 / 80%);
+	}
+
+	header ul {
+		grid-auto-flow: row;
+		grid-template-columns: 1fr;
+		grid-template-rows: none;
+		grid-auto-rows: max-content;
+		gap: 0.5rem;
+	
+		padding: 0;
+	}
+
+	header a {
+		place-content: flex-start;
+	}
+	
+	/* #nav-toggle-label {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex-basis: auto;
+	
+		z-index: 2;
+	} */
+	
+	/* #nav-toggle-label .bar {
+		display: inline-block;
+	
+		height: var(--bar-height);
+		width: 100%;
+	
+		background-color: var(--bg-color);
+	
+		transition: transform 250ms ease-out;
+	}
+	
+	#nav-toggle:checked + #nav-toggle-label > .bar:nth-child(1) {
+		transform: 
+		  translate(0, calc(var(--size) / 2 - var(--bar-height) / 2)) 
+		  rotate(225deg);
+	}
+	
+	#nav-toggle:checked + #nav-toggle-label > .bar:nth-child(2) {
+		transform: scaleX(0);
+	}
+	
+	#nav-toggle:checked + #nav-toggle-label > .bar:nth-child(3) {
+		transform: 
+		  translate(0, calc(-1 * var(--size) / 2 + var(--bar-height) / 2)) 
+		  rotate(135deg);
+	} */
+
+	#logo{
+		margin: 20px 0px 30px 30px;
+		float: left;
+        width: 50px;
+		height: 50px;	
+	}
+
+	.title{
+		margin-top: 150px;
+		font-size: 25px;
+	}
+	
+	.menu-btn{
+		margin: 10px 30px 30px 0px;
+		float: right;
+		/* padding-right: 0px; */
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		cursor: pointer;
+		transition: all .5s ease-in-out;
+	}
+
+	/* .menu-btn:after{
+		content: "";
+  		position: absolute;
+  		top: -1px;
+  		right: -1px;
+  		transform:translate(50%,-50%);
+  		width: 40px;
+  		height: 40px;
+  		border-radius: 50%;
+  		background: #4da6ff;
+  		mix-blend-mode:darken;
+	} */
+
+	.menu-btn_burger{
+		margin-top: 0px;
+		width:40px;
+		height: 5px;
+		background: #0088A9;
+		border-radius: 5px;
+		box-shadow: 0px 2px 5px rgb(26, 64, 71);
+		transition: all .5s ease-in-out;
+	}
+
+	.menu-btn_burger::before,
+	.menu-btn_burger::after{
+		content: '';
+		position: absolute;
+		width: 40px;
+		height: 5px;
+		background: #0088A9;
+		border-radius: 5px;
+		box-shadow: 0px 2px 5px rgb(26, 64, 71);
+		transition: all .5s ease-in-out;
+	}
+	.menu-btn_burger::before{
+		transform: translateY(-16px);
+	}
+	.menu-btn_burger::after{
+		transform: translateY(16px);
+	}
+
+	/* ANIMATION */
+	.menu-btn.open .menu-btn_burger{
+		transform: translateX(-50px);
+		background: transparent;
+		box-shadow: none;
+	}
+
+	.menu-btn.open .menu-btn_burger::before{
+		transform: rotate(45deg) translate(35px, -35px);
+	}
+
+	.menu-btn.open .menu-btn_burger::after{
+		transform: rotate(-45deg) translate(35px, 35px);
+	}
+
+}
