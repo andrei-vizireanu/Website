@@ -86,9 +86,7 @@ header ul {
 	grid-auto-columns: max-content;
 	grid-template-rows: 1fr;
 	gap: 0.5rem;
-
 	margin: 40px 80px 30px 30px;
-  
 	list-style-type: none;
 }
 
@@ -259,7 +257,7 @@ body {
 	}
 	
 	.menu-btn{
-		margin: 10px 30px 30px 0px;
+		margin: 20px 30px 30px 0px;
 		float: right;
 		position: relative;
 		display: flex;
@@ -272,8 +270,8 @@ body {
 	.menu-btn_burger{
 		right: 0;
 		margin-top: 0px;
-		width:30px;
-		height: 5px;
+		width: 28px;
+		height: 4px;
 		background: #0088A9;
 		border-radius: 5px;
 		box-shadow: 0px 2px 5px rgb(26, 64, 71);
@@ -285,18 +283,18 @@ body {
 		right: 0;
 		content: "";
 		position: absolute;
-		height: 5px;
+		height: 4px;
 		background: #0088A9;
 		border-radius: 5px;
 		box-shadow: 0px 2px 5px rgb(26, 64, 71);
 		transition: all .5s ease-in-out;
 	}
 	.menu-btn_burger::before{
-		width: 20px;
+		width: 18px;
 		transform: translateY(-16px);
 	}
 	.menu-btn_burger::after{
-		width: 40px;
+		width: 38px;
 		transform: translateY(16px);
 	}
 
@@ -312,12 +310,12 @@ body {
 	}
 
 	.menu-btn.open .menu-btn_burger::before{
-		width: 40px;
+		width: 38px;
 		transform: rotate(45deg) translate(35px, -35px);
 	}
 
 	.menu-btn.open .menu-btn_burger::after{
-		width: 40px;
+		width: 38px;
 		transform: rotate(-45deg) translate(35px, 35px);
 	}
 
