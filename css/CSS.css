@@ -72,7 +72,7 @@ header{
 	border-bottom-style:solid;
 	border-radius: 0px 0px 50px 50px;
 	border-color:#0088A9;
-	border-width: 15px;
+	border-width: 10px;
 
 	display: grid;
 	grid-auto-flow: column;
@@ -213,6 +213,10 @@ body {
 		place-content: flex-start;
 	}
 
+	#nav-desktop li{
+		padding: 0px 0px;
+	}
+
 	#logo{
 		margin: 20px 0px 30px 30px;
 		float: left;
@@ -226,35 +230,22 @@ body {
 	}
 	
 	.menu-btn{
+		/* text-align: right; */
+
 		margin: 10px 30px 30px 0px;
 		float: right;
-		/* padding-right: 0px; */
 		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		
 		cursor: pointer;
 		transition: all .5s ease-in-out;
 		
 	}
 
-	/* .menu-btn:after{
-		content: "";
-  		position: absolute;
-  		top: -1px;
-  		right: -1px;
-  		transform:translate(50%,-50%);
-  		width: 40px;
-  		height: 40px;
-  		border-radius: 50%;
-  		background: #4da6ff;
-  		mix-blend-mode:darken;
-	} */
-
 	.menu-btn_burger{
 		margin-top: 0px;
-		width:40px;
+		width:30px;
 		height: 5px;
 		background: #0088A9;
 		border-radius: 5px;
@@ -266,7 +257,6 @@ body {
 	.menu-btn_burger::after{
 		content: "";
 		position: absolute;
-		width: 40px;
 		height: 5px;
 		background: #0088A9;
 		border-radius: 5px;
@@ -274,9 +264,11 @@ body {
 		transition: all .5s ease-in-out;
 	}
 	.menu-btn_burger::before{
+		width: 20px;
 		transform: translateY(-16px);
 	}
 	.menu-btn_burger::after{
+		width: 40px;
 		transform: translateY(16px);
 	}
 
@@ -290,11 +282,10 @@ body {
 	.nav.open{
 		display: grid;
 		grid-auto-flow: column;
-		grid-auto-columns: max-content;
 		position: fixed;
 		top: 0;
 		bottom: 0;
-		width: 300px;
+		width: 200px;
 		right: 0rem;
 		margin-top: 100px;
 	
@@ -302,20 +293,28 @@ body {
 
 		border-bottom-style:solid;
 		border-left-style:solid;
-		border-radius: 0px 0px 0px 90%;
+		border-radius: 0px 0px 0px 100%;
 		border-color:#0088A9;
-		border-width: 15px;
+		border-width: 10px;
+		
 	}
+
+	/* .nav.open ul{
+		align-items: center;
+	} */
 
 	.nav{
 		display: none;
+		transition: all .5s ease-in-out;
 	}
 
 	.nav ul{
+		
 		margin: 0px 30px 30px 30px;
 	}
 
 	.nav a{
+		margin-top: 30px;
 		float: right;
 	}
 
@@ -323,17 +322,13 @@ body {
 		border-radius: 0px 0px 0px 50px;
 	}
 
-	/* .menu-btn.open .bar{
-		transform: translateX(-50px);
-		background: transparent;
-		box-shadow: none;
-	} */
-
 	.menu-btn.open .menu-btn_burger::before{
+		width: 40px;
 		transform: rotate(45deg) translate(35px, -35px);
 	}
 
 	.menu-btn.open .menu-btn_burger::after{
+		width: 40px;
 		transform: rotate(-45deg) translate(35px, 35px);
 	}
 
