@@ -217,9 +217,9 @@ body {
 		margin-top: 80px;
 		padding-right: 25px;
 		background: #24252A;
-		border-bottom-style:solid;
+		/* border-bottom-style:solid; */
 		border-left-style:solid;
-		border-radius: 0px 0px 0px 100%;
+		border-radius: 0px 0px 50px 50px;
 		border-color:#0088A9;
 		border-width: 10px;
 	}
