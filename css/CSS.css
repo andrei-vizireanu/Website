@@ -61,7 +61,6 @@ table {
 	border-spacing: 0;
 }
 
-
 /* Start the rules */
 header{
 	position: fixed;
@@ -76,7 +75,7 @@ header{
 
 	display: grid;
 	grid-auto-flow: column;
-	grid-auto-columns: max-content; /* Each column will sized to fit the content */
+	grid-auto-columns: max-content;
 	z-index: 1;
 }
 
@@ -110,11 +109,6 @@ body {
 	height: 50px;
 	width: 50px;
 }
-
-/* #nav-ul-desktop{
-	margin-top: 30px;
-} */
-
 
 #nav-desktop li{
     display: inline-block;
@@ -194,15 +188,22 @@ body {
 		align-items: center;
 	}
 
-	header a {
-		place-content: flex-start;
-	}
-
 	#logo{
 		margin: 10px 0px 20px 30px;
 		float: left;
         width: 50px;
 		height: 50px;	
+	}
+
+	#first-item{
+		margin-top: 20px;
+	}
+
+	#nav-ul-desktop{
+		border-color:#0088A9;
+		border-top-style:solid;
+		border-width: 2px;
+		border-radius: 2px;
 	}
 
 	.nav.open{
@@ -214,15 +215,13 @@ body {
 		width: 200px;
 		right: 0rem;
 		margin-top: 80px;
-	
+		padding-right: 25px;
 		background: #24252A;
-
 		border-bottom-style:solid;
 		border-left-style:solid;
 		border-radius: 0px 0px 0px 100%;
 		border-color:#0088A9;
 		border-width: 10px;
-		
 	}
 	
 	.nav{
@@ -255,6 +254,7 @@ body {
 	
 	.menu-btn{
 		margin: 20px 30px 30px 0px;
+		padding: 0;
 		float: right;
 		position: relative;
 		display: flex;
@@ -265,10 +265,11 @@ body {
 	}
 
 	.menu-btn_burger{
+		padding: 0;
 		right: 0;
 		margin-top: 0px;
 		width: 28px;
-		height: 4px;
+		height: 5px;
 		background: #0088A9;
 		border-radius: 5px;
 		box-shadow: 0px 2px 5px rgb(26, 64, 71);
@@ -280,7 +281,7 @@ body {
 		right: 0;
 		content: "";
 		position: absolute;
-		height: 4px;
+		height: 5px;
 		background: #0088A9;
 		border-radius: 5px;
 		box-shadow: 0px 2px 5px rgb(26, 64, 71);
@@ -291,6 +292,8 @@ body {
 		transform: translateY(-16px);
 	}
 	.menu-btn_burger::after{
+		display: block;
+		margin-top: 1px;
 		width: 38px;
 		transform: translateY(16px);
 	}
@@ -302,10 +305,6 @@ body {
 		box-shadow: none;
 	}
 
-	.header.open{
-		border-radius: 0px 0px 0px 50px;
-	}
-
 	.menu-btn.open .menu-btn_burger::before{
 		width: 38px;
 		transform: rotate(45deg) translate(35px, -35px);
@@ -314,6 +313,10 @@ body {
 	.menu-btn.open .menu-btn_burger::after{
 		width: 38px;
 		transform: rotate(-45deg) translate(35px, 35px);
+	}
+
+	.header.open{
+		border-radius: 0px 0px 0px 50px;
 	}
 
 }
