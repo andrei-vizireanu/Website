@@ -303,16 +303,19 @@ body {
 		transform: translateX(-50px);
 		background: transparent;
 		box-shadow: none;
+		height: 5px;
 	}
 
 	.menu-btn.open .menu-btn_burger::before{
+		height: 5px;
 		width: 38px;
 		transform: rotate(45deg) translate(35px, -35px);
 	}
 
 	.menu-btn.open .menu-btn_burger::after{
+		height: 5px;
 		width: 38px;
-		transform: rotate(-45deg) translate(35px, 35px);
+		transform: rotate(-46deg) translate(35px, 35px);
 	}
 
 	.header.open{
