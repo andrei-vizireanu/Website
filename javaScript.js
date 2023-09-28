@@ -36,20 +36,54 @@ function mobileNavIcon(){
 }
 
 const menuBtn = document.querySelector('.menu-btn');
-const nav = document.querySelector('.nav');
-const header = document.querySelector('.header');
 let menuOpen = false;
 menuBtn.addEventListener('click', () => {
   if(!menuOpen){
     menuBtn.classList.add('open');
-    nav.classList.add('open');
-    header.classList.add('open');
     menuOpen = true;
   }
   else{
     menuBtn.classList.remove('open');
-    nav.classList.remove('open');
-    header.classList.remove('open');
     menuOpen = false;
   }
 });
+
+function changeContent(page) {
+  const content = document.getElementById('content');
+  var element = document.getElementById(page);
+  const home = document.getElementById('home');
+  const aboutMe = document.getElementById('aboutMe');
+  const myProjects = document.getElementById('myProjects');
+  const contact = document.getElementById('contact-desktop');
+
+  home.className = "special-text";
+  aboutMe.className = "special-text";
+  myProjects.className = "special-text";
+  contact.className = "special-text";
+  // Remove all classes by setting className to an empty string
+  element.className = "";
+  // Add the new class
+  element.classList.add("on-page");
+
+  
+
+  // Define relative paths to your content HTML files
+  const contentPaths = {
+    'home': 'index.html',
+    'aboutMe': 'aboutMe.html',
+    'myProjects': 'myProjects.html',
+    'contact-desktop': 'contact.html'
+  };
+
+  // Use AJAX to fetch the content from separate HTML files
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', contentPaths[page], true);
+
+  xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+          content.innerHTML = xhr.responseText;
+      }
+  };
+
+  xhr.send();
+}
